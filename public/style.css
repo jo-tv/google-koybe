@@ -1,0 +1,240 @@
+/* التنسيق العام */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    height: 100vh;
+    padding: 20px;
+    
+    
+}
+
+#app {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow:
+        rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px,
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+/* التنسيق للـ header */
+header h1 {
+    text-align: center;
+    width: 100%;
+    color: #4caf50;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* تنسيق للنماذج */
+.form-container {
+    background-color: #e7f5e7;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: right;
+}
+
+form button {
+    background-color: #4caf50;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* تنسيق لقائمة القنوات */
+.channels-list {
+    margin: 20px auto;
+}
+
+#channelsList {
+    list-style-type: none;
+    padding-left: 0;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, auto);
+}
+
+#channelsList li {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    box-shadow:
+        rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px,
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#channelsList li strong {
+    font-size: 0.8rem;
+    width: 100px;
+}
+
+#channelsList li a {
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+#channelsList li a:hover {
+    text-decoration: underline;
+}
+
+#channelsList li button,
+a {
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 0.8rem;
+}
+
+#channelsList li button:hover {
+    background-color: #e53935;
+}
+
+/* تحسين الاستجابة للهواتف */
+@media (max-width: 768px) {
+    #app {
+        padding: 15px;
+    }
+
+    form input,
+    form button {
+        font-size: 1rem;
+    }
+
+    #channelsList li {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #channelsList li strong {
+        margin-bottom: 10px;
+    }
+}
+/* تنسيق رسائل الخطأ والنجاح */
+#messages .alert {
+    padding: 10px;
+    margin: 20px auto;
+    border-radius: 5px;
+    font-size: 16px;
+    position: absolute;
+    top: 0px;
+    width: 80%;
+}
+
+.alert.success {
+    background-color: #4caf50;
+    color: white;
+}
+
+.alert.error {
+    background-color: #f44336;
+    color: white;
+}
+
+/* تنسيق النموذج */
+#addChannelForm form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+#addChannelForm input {
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#addChannelForm button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#addChannelForm button:hover {
+    background-color: #45a049;
+}
+
+/* تنسيق قائمة القنوات */
+#channelsList {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#channelsList li {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+#channelsList li button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#channelsList li button:hover {
+    background-color: #e53935;
+}

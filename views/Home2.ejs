@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=.5">
+  <link rel="stylesheet" href="./style.css">
+  <title>إدارة القنوات</title>
+</head>
+<body>
+  <!-- عرض رسائل النجاح أو الخطأ -->
+  <div id="messages">
+    <% if (message) { %>
+      <div class="alert success">
+        <%= message %>
+      </div>
+    <% } %>
+
+    <% if (error) { %>
+      <div class="alert error">
+        <%= error %>
+      </div>
+    <% } %>
+  </div>
+
+  <div id="app">
+    <h1>إدارة القنوات</h1>
+
+    <!-- نموذج إضافة قناة -->
+    <div id="addChannelForm">
+      <h3>إضافة قناة جديدة</h3>
+      <form action="/add" method="POST">
+        <input type="text" name="name" placeholder="اسم القناة" required />
+        <input type="text" name="url" placeholder="رابط القناة" required />
+        <button type="submit">إضافة قناة</button>
+      </form>
+    </div>
+
+    <h2>القنوات المتاحة</h2>
+    <ul id="channelsList">
+      <% channels.forEach(channel => { %>
+        <li>
+          <strong><%= channel.name %></strong>: 
+          <a href="/<%= channel.name %>" target="_blank">🔗 مشاهدة</a>
+          <form action="/delete" method="POST" style="display:inline;">
+            <input type="hidden" name="name" value="<%= channel.name %>" />
+            <button type="submit">🗑️ حذف</button>
+          </form>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+</body>
+</html>
