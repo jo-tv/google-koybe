@@ -182,7 +182,6 @@ app.post("/delete", requireAuth, async (req, res) => {
 // 🟢 قائمة الروابط المتاحة للبث
 const streamSources = [
  "http://mo3ad.xyz/5ffwT4Jtdz/p9VfzRvdxK/",
- "http://xtream-ie.com/mo3ad7756/mo3ad7756/",
  "http://mutant.arrox.top/live/oWg8mm2z2/C1LwyPEFOj/"
 ];
 
