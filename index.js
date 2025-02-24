@@ -182,7 +182,7 @@ app.post("/delete", requireAuth, async (req, res) => {
 // 🟢 قائمة الروابط المتاحة للبث
 const streamSources = [
  "http://mo3ad.xyz/5ffwT4Jtdz/p9VfzRvdxK/",
- "http://mutant.arrox.top/live/oWg8mm2z2/C1LwyPEFOj/"
+ "http://pro.ipcover.lol:8080/T3H2XcMqmt7A/jjShbfJwzhV6/",
 ];
 
 // 🔹 مسار بث القناة
