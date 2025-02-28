@@ -181,7 +181,7 @@ app.post("/delete", requireAuth, async (req, res) => {
 
 // 🟢 قائمة الروابط المتاحة للبث
 const streamSources = [
- "http://mo3ad.xyz/5ffwT4Jtdz/p9VfzRvdxK/",
+ "http://mo3ad.xyz/HMAwWYPc3t/2Rdj8W5fFT/",
  "http://tv.pure-onetv.com/mahoua242/069573077m/",
 ];
 
