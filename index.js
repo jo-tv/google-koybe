@@ -179,40 +179,47 @@ app.post("/delete", requireAuth, async (req, res) => {
 //  })
 // );
 
-// 🟢 قائمة الروابط المتاحة للبث
+// 🟢 الروابط المتاحة للبث
 const streamSources = [
- "http://mo3ad.xyz/HMAwWYPc3t/2Rdj8W5fFT/",
- "http://tv.pure-onetv.com/mahoua242/069573077m/",
+  "http://mo3ad.xyz/HMAwWYPc3t/2Rdj8W5fFT/",
+  "http://tv.pure-onetv.com/mahoua242/069573077m/",
 ];
 
 // 🔹 مسار بث القناة
 app.get('/josef/stream/:channel', async (req, res) => {
- const channel = req.params.channel;
+  const channel = req.params.channel;
 
- for (let i = 0; i < streamSources.length; i++) {
-  const originalUrl = `${streamSources[i]}${channel}`;
+  // تحقق من إتاحة الرابط
+  for (let i = 0; i < streamSources.length; i++) {
+    const originalUrl = `${streamSources[i]}${channel}`;
 
-  try {
-   console.log(`🔄 تجربة الرابط: ${originalUrl}`);
+    try {
+      console.log(`🔄 تجربة الرابط: ${originalUrl}`);
 
-   const response = await axios({
-    method: 'get',
-    url: originalUrl,
-    responseType: 'stream',
-    timeout: 30000, // زيادة المهلة إلى 30 ثانية
-   });
+      // قم بتحديد رؤوس الطلب لتقليل استهلاك البيانات عبر دعم الضغط
+      const response = await axios({
+        method: 'get',
+        url: originalUrl,
+        responseType: 'stream',
+        headers: {
+          'Accept-Encoding': 'gzip, deflate, br', // ضغط البيانات
+        },
+        timeout: 30000, // زيادة المهلة إلى 30 ثانية
+      });
 
-   console.log(`✅ البث يعمل من المصدر ${i + 1}`);
-   response.data.pipe(res);
-   return; // ⬅️ نوقف العملية بمجرد العثور على رابط شغال
-  } catch (err) {
-   console.error(`❌ المصدر ${i + 1} لا يعمل، المحاولة التالية...`);
+      console.log(`✅ البث يعمل من المصدر ${i + 1}`);
+      
+      // إرسال البيانات المضغوطة إلى المستخدم
+      response.data.pipe(res);
+      return; // نوقف العملية بمجرد العثور على رابط شغال
+    } catch (err) {
+      console.error(`❌ المصدر ${i + 1} لا يعمل، المحاولة التالية...`);
+    }
   }
- }
 
- res.status(500).send("⚠️ جميع المصادر غير متاحة حاليًا");
+  res.status(500).send("⚠️ جميع المصادر غير متاحة حاليًا");
 });
 
-// تشغيل الخادم
+// تشغيل الخادم على المنفذ 3000
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`✅ الخادم يعمل على http://localhost:${PORT}`));
