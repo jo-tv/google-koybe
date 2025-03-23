@@ -181,8 +181,7 @@ app.post("/delete", requireAuth, async (req, res) => {
 
 // 🟢 الروابط المتاحة للبث
 const streamSources = [
-  "http://mo3ad.xyz/HMAwWYPc3t/2Rdj8W5fFT/",
-  "http://kstv.us:8080/jsdaniels74/1836272615/",
+  "http://173.212.193.243:8080/PbiEANUeb5/94UU7bDVJu/",
 ];
 
 // 🔹 مسار بث القناة
