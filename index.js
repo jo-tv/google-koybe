@@ -181,7 +181,7 @@ app.post("/delete", requireAuth, async (req, res) => {
 
 // 🟢 الروابط المتاحة للبث
 const streamSources = [
-  "http://173.212.193.243:8080/PbiEANUeb5/94UU7bDVJu/",
+  "http://xtream-ie.com:80/mo3ad7791/mo3ad7791/",
 ];
 
 // 🔹 مسار بث القناة
