@@ -181,7 +181,7 @@ app.post("/delete", requireAuth, async (req, res) => {
 
 // 🟢 الروابط المتاحة للبث
 const streamSources = [
-  "http://xtream-ie.com:80/mo3ad7791/mo3ad7791/",
+  "http://xtream-ie.com:80/mo3ad500w/mo3ad500w/",
   "http://no0rqpwo9qdbar.shurty.me:25461/93p6E6b0OG/918311183993/",
 ];
 
