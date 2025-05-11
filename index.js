@@ -181,7 +181,7 @@ app.post("/delete", requireAuth, async (req, res) => {
 
 // 🟢 الروابط المتاحة للبث
 const streamSources = [
-  "https://mo3ad.xyz/live/rHZRdd7PFr/KbjNvZVzJD/",
+  "https://mo3ad.xyz/live/xYwyMGukCV/zjw4vJzAyj/",
   "http://no0rqpwo9qdbar.shurty.me:25461/93p6E6b0OG/918311183993/",
 ];
 
