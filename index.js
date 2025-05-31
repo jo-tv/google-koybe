@@ -186,8 +186,8 @@ app.post("/delete", requireAuth, async (req, res) => {
 
 // 🟢 الروابط المتاحة للبث
 const streamSources = [
-    "https://mo3ad.xyz/live/xYwyMGukCV/zjw4vJzAyj/",
-    "https://mr-jo.vercel.app/"
+    "https://mo3ad.xyz/live/mATMt4qe8v/hjqPF4mVCP/",
+    
 ];
 
 // 🔹 مسار بث القناة
