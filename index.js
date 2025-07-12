@@ -183,9 +183,7 @@ app.post('/delete', requireAuth, async (req, res) => {
 // );
 
 // 🟢 الروابط المتاحة للبث
-const streamSources = [
-  'http://xtream-ie.com:80/mo3ad500vv/mo3ad500vv/',
-];
+const streamSources = ['https://mo3ad.xyz/live/XvwSHDyaZj/ntX4tmTDHQ/'];
 
 // 🔹 مسار بث القناة
 app.get('/josef/stream/:channel', async (req, res) => {
