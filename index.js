@@ -183,7 +183,7 @@ app.post('/delete', requireAuth, async (req, res) => {
 // );
 
 // 🟢 الروابط المتاحة للبث
-const streamSources = ['https://mo3ad.xyz/live/XvwSHDyaZj/ntX4tmTDHQ/'];
+const streamSources = ['https://mo3ad.xyz/live/gqG7SjCp59/NkwnxPayxd/'];
 
 // 🔹 مسار بث القناة
 app.get('/josef/stream/:channel', async (req, res) => {
